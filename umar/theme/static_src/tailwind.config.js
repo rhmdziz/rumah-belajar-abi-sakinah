@@ -4,7 +4,7 @@
  * If you need the full config, get it from here:
  * https://unpkg.com/browse/tailwindcss@latest/stubs/defaultConfig.stub.js
  */
-
+const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
     content: [
         /**
@@ -42,7 +42,14 @@ module.exports = {
         // '../../**/*.py'
     ],
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                sans: ["'Plus Jakarta Sans'", ...defaultTheme.fontFamily.sans]
+            },
+            colors: {
+                primary: '#38b6ff',
+            }
+        },
     },
     plugins: [
         /**
@@ -50,7 +57,7 @@ module.exports = {
          * for forms. If you don't like it or have own styling for forms,
          * comment the line below to disable '@tailwindcss/forms'.
          */
-        require('@tailwindcss/forms'),
+        // require('@tailwindcss/forms'),
         require('@tailwindcss/typography'),
         require('@tailwindcss/line-clamp'),
         require('@tailwindcss/aspect-ratio'),
