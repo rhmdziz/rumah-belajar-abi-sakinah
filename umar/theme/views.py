@@ -17,7 +17,7 @@ def index(request):
 
     return render(request, "index.html", context)
 
-def galleryView(request):
+def galleryViews(request):
     gallery = Gallery.objects.all()
     context = {
         'gallery': gallery,
@@ -31,5 +31,15 @@ def blogViews(request, id):
         'blog': blog,
     }
     return render(request, "blog.html", context)
+
+def galleryViewsDetail(request, id):
+    galleryDetail = get_object_or_404(Gallery, pk=id)
+    gallery = Gallery.objects.exclude(pk=id)
+    context = {
+        'galleryDetail': galleryDetail,
+        'gallery': gallery,
+    }
+    
+    return render(request, "gallery-detail.html", context)
 
 

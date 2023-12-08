@@ -124,7 +124,6 @@
 								<li class="line-clamp-1">Kemendikbud: Ini 6 Tempat Les Menggambar Terbaik di Kota
 									Palembang</li>
 							</ul>
-
 						</ul>
 						<ul>
 							<li class="font-semibold text-sm"><a href="#contact">Kontak</a></li>
@@ -151,55 +150,7 @@
 	<script src="{% static 'owlcarousel/owl.carousel.min.js' %}"></script>
 
 
-	<script>
-		var COLOURS = ['#61dfff', '#ff6767', '#A7EBCA', '#FFFFFF', '#D7DA5F', 'DDA7EB'];
-
-		var radius = 0;
-		var currentColorIndex = 0;
-
-		var canvas = document.getElementById('canvas');
-		var sketch = Sketch.create({
-
-			container: canvas,
-			autoclear: false,
-			retina: 'auto',
-
-			update: function () {
-				radius = 2 + Math.abs(Math.sin(this.millis * 0.003) * 50);
-			},
-
-			click: function () {
-				var selectedColor = COLOURS[currentColorIndex];
-				currentColorIndex = (currentColorIndex + 1) % COLOURS.length;
-			},
-
-			touchmove: function () {
-				for (var i = this.touches.length - 1, touch; i >= 0; i--) {
-					touch = this.touches[i];
-
-					this.lineCap = 'round';
-					this.lineJoin = 'round';
-
-					this.fillStyle = this.strokeStyle = COLOURS[currentColorIndex];
-
-					this.lineWidth = radius;
-
-					this.beginPath();
-					this.moveTo(touch.ox, touch.oy);
-					this.lineTo(touch.x, touch.y);
-					this.stroke();
-				}
-			}
-		});
-
-		canvas.addEventListener('touchstart', function (event) {
-			event.preventDefault();
-			sketch.click();
-		});
-
-
-
-	</script>
+	
 </body>
 
 </html>

@@ -9,6 +9,7 @@ app_name = "theme"
 
 urlpatterns = [
     path("", index, name="index"),
-    path('gallery/', galleryView, name='gallery'),
+    path('gallery/', galleryViews, name='gallery'),
+    path('gallery/<int:id>', galleryViewsDetail, name='galleryDetail'),
     path('blog/<int:id>', blogViews, name='blog'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

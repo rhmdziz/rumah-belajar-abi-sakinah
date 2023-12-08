@@ -6,10 +6,10 @@
 {% block content %}
 <!-- HEADER -->
 <header class="flex justify-center items-center bg-slate-50 relative">
-    <div class="container px-6 lg:px-24 h-screen flex justify-center items-center">
+    <div class="container px-6 lg:px-24 h-screen flex md:justify-center items-center">
         <div class="z-20 pointer-events-none">
-            <h1 class="text-6xl">Selamat datang</h1>
-            <p class="text-3xl my-4">Rumah Belajar Abi Sakinah</p>
+            <h1 class="text-4xl lg:text-6xl">Selamat datang</h1>
+            <p class="text-xl lg:text-3xl my-4">Rumah Belajar Abi Sakinah</p>
         </div>
     </div>
     <div id="canvas" class="z-0 absolute bg-transparent">
@@ -21,16 +21,19 @@
     </div>
 </header>
 
-<!-- ABOUT -->
-<div id="about" class="flex justify-center items-center py-20 bg-primary">
-    <div class="container px-6 lg:px-24">
-        <div class="w-full bg-white h-full rounded-lg shadow">
+<!-- HEADER END -->
 
-            <h2 class="text-center text-3xl pt-10">Tentang Kami</h2>
-            <div class="w-44">
-                <img src="{% static 'img/logo.png' %}" alt="Logo Rumah Belajar Abi Sakinah" width="100%">
+
+<!-- ABOUT -->
+<div id="about" class="flex justify-center items-center">
+    <div class="container px-6 lg:px-24 min-h-screen py-24">
+        <div class="w-full bg-white h-full rounded-lg">
+            <h2 class="text-center text-3xl ">Tentang Kami</h2>
+            <div class="h-80 w-full bg-slate-400 my-4">
+
             </div>
-            <div class="flex mx-8">
+
+            <div class="lg:flex">
                 <p>Rumah Belajar Abi Sakinah adalah tempat les yang menyediakan program pembelajaran mewarnai,
                     menggambar, melukis, dan kaligrafi yang ada di Kota Palembang. Les ini dituju bagi anak-anak tingkat
                     TK, SD, SMP, dan SMA. Rumah Belajar Abi sakinah sudah ada sejak tahun 2021. Kami percaya bahwa seni
@@ -46,16 +49,19 @@
             <div class="mx-8">
                 Visi
                 <p>
-
-                    Menjadi pusat pembelajaran seni yang menginspirasi dan membantu anak-anak untuk mengembangkan kreativitas secara optimal.
+                    Menjadi pusat pembelajaran seni yang menginspirasi dan membantu anak-anak untuk mengembangkan
+                    kreativitas secara optimal.
                 </p>
                 Misi
                 <ol class="list-decimal">
-                    <li>Memberikan pembelajaran yang menyenangkan dan memotivasi anak-anak untuk mengembangkan keterampilan seninya.</li>
+                    <li>Memberikan pembelajaran yang menyenangkan dan memotivasi anak-anak untuk mengembangkan
+                        keterampilan seninya.</li>
                     <li>Mewadahi imajinasi dan kreativitas anak melalui kegiatan seni.</li>
                     <li>Mengembangkan keterampilan dalam seni visual, seperti komposisi, perspektif dan proporsi.</li>
-                    <li>Membantu menemukan minat anak dalam seni dan mendorong mereka untuk mengembangkan potensi terbaik.</li>
-                    <li>Menyediakan lingkungan belajar yang positif dan mendukung bagi anak-anak untuk mencoba hal baru dalam dunia seni.</li>
+                    <li>Membantu menemukan minat anak dalam seni dan mendorong mereka untuk mengembangkan potensi
+                        terbaik.</li>
+                    <li>Menyediakan lingkungan belajar yang positif dan mendukung bagi anak-anak untuk mencoba hal baru
+                        dalam dunia seni.</li>
                 </ol>
             </div>
         </div>
@@ -64,32 +70,62 @@
 </div>
 <!-- ABOUT END -->
 
+<!-- GALLERY -->
+<div id="gallery" class="flex justify-center items-center py-20 bg-slate-100">
+    <div class="container px-6 lg:px-24 min-h-screen">
+        <h2 class="text-center text-3xl py-4"><a href="{% url 'theme:gallery' %}">Galeri</a></h2>
+        <div class="h-full w-full grid grid-cols-1 lg:grid-cols-3 gap-4 py-6">
+            <div class="h-60 w-full bg-slate-300 flex justify-center items-center overflow-hidden group">
+                <a href="{% url 'theme:gallery' %}">
+                    <img src="{% static 'img/logo.png' %}" class="w-full group-hover:scale-110 transition duration-500">
+                </a>
+            </div>
+            <div class="h-60 w-full bg-slate-300 flex justify-center items-center">
+                2
+            </div>
+            <div class="h-60 w-full bg-slate-300 flex justify-center items-center">
+                3
+            </div>
+            <div class="h-60 w-full bg-slate-300 flex justify-center items-center">
+                1
+            </div>
+            <div class="h-60 w-full bg-slate-300 flex justify-center items-center">
+                2
+            </div>
+            <div class="h-60 w-full bg-slate-300 flex justify-center items-center">
+                3
+            </div>
+            <div class="h-60 w-full bg-slate-300 flex justify-center items-center">
+                1
+            </div>
+            <div class="h-60 w-full bg-slate-300 flex justify-center items-center">
+                2
+            </div>
+            <div class="h-60 w-full bg-slate-300 flex justify-center items-center">
+                3
+            </div>
+        </div>
+    </div>
+</div>
+<!-- GALLERY END -->
+
 <!-- TESTIMONI -->
-<div id="testimoni" class="flex justify-center items-center py-20">
-    <div class="container px-6 lg:px-24">
+<div id="testimoni" class="flex justify-center items-center py-20 bg-slate-100">
+    <div class="container px-6 lg:px-24 h-1/2">
         <h2 class="text-center text-3xl py-4">Testimoni</h2>
-        <div class="owl-carousel owl-theme">
-            <div class="item bg-slate-200 text-center w-full px-2 py-4 rounded-md">
-                <q>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse fuga tempore totam. Vitae rerum provident nostrum praesentium voluptates velit nam optio esse maxime enim vero sunt dolorem, necessitatibus blanditiis error?em</q>
-                <p>Aziz - Alumni 2023</p>
+        <div class="owl-carousel owl-theme py-12">
+
+            {% for i in testi %}
+            <div class="item bg-white shadow-sm text-center w-full px-4 py-6 rounded-xl">
+                <p class="text-4xl py-4 text-slate-700"><i class="bi bi-person-circle"></i></p>
+                <q class="font-light text-sm">{{ i.says }}</q>
+                <div class="pt-4">
+                    <p class="font-medium">{{i.name}}</p>
+                    <p class="text-xs">{{i.title}}</p>
+                </div>
             </div>
-            <div class="item bg-slate-200 text-center w-full px-2 py-4 rounded-md">
-                <q>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse fuga tempore totam. Vitae rerum provident nostrum praesentium voluptates velit nam optio esse maxime enim vero sunt dolorem, necessitatibus blanditiis error?em</q>
-                <p>Aziz - Alumni 2023</p>
-            </div>
-            <div class="item bg-slate-200 text-center w-full px-2 py-4 rounded-md">
-                <q>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse fuga tempore totam. Vitae rerum provident nostrum praesentium voluptates velit nam optio esse maxime enim vero sunt dolorem, necessitatibus blanditiis error?em</q>
-                <p>Aziz - Alumni 2023</p>
-            </div>
-            <div class="item bg-slate-200 text-center w-full px-2 py-4 rounded-md">
-                <q>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse fuga tempore totam. Vitae rerum provident nostrum praesentium voluptates velit nam optio esse maxime enim vero sunt dolorem, necessitatibus blanditiis error?em</q>
-                <p>Aziz - Alumni 2023</p>
-            </div>
-            <div class="item bg-slate-200 text-center w-full px-2 py-4 rounded-md">
-                <q>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse fuga tempore totam. Vitae rerum provident nostrum praesentium voluptates velit nam optio esse maxime enim vero sunt dolorem, necessitatibus blanditiis error?em</q>
-                <p>Aziz - Alumni 2023</p>
-            </div>
-            
+            {% endfor %}
+
         </div>
 
     </div>
@@ -102,5 +138,53 @@
 <!-- Set up your HTML -->
 
 
-<!-- HEADER END -->
+
+<script src="{% static 'js/sketch.min.js' %}"></script>
+
+<script>
+    var COLOURS = ['#61dfff', '#ff6767', '#A7EBCA', '#FFFFFF', '#D7DA5F', 'DDA7EB'];
+
+    var radius = 0;
+    var currentColorIndex = 0;
+
+    var canvas = document.getElementById('canvas');
+    var sketch = Sketch.create({
+
+        container: canvas,
+        autoclear: false,
+        retina: 'auto',
+
+        update: function () {
+            radius = 2 + Math.abs(Math.sin(this.millis * 0.003) * 50);
+        },
+
+        click: function () {
+            var selectedColor = COLOURS[currentColorIndex];
+            currentColorIndex = (currentColorIndex + 1) % COLOURS.length;
+        },
+
+        touchmove: function () {
+            for (var i = this.touches.length - 1, touch; i >= 0; i--) {
+                touch = this.touches[i];
+
+                this.lineCap = 'round';
+                this.lineJoin = 'round';
+
+                this.fillStyle = this.strokeStyle = COLOURS[currentColorIndex];
+
+                this.lineWidth = radius;
+
+                this.beginPath();
+                this.moveTo(touch.ox, touch.oy);
+                this.lineTo(touch.x, touch.y);
+                this.stroke();
+            }
+        }
+    });
+
+    canvas.addEventListener('touchstart', function (event) {
+        event.preventDefault();
+        sketch.click();
+    });
+</script>
 {% endblock %}

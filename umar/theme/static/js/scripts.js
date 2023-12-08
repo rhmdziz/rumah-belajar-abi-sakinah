@@ -5,14 +5,14 @@ $(document).ready(function () {
         nav: false,
         loop: true,
         autoplay: true,
-        autoplayTimeout: 3000,
+        autoplayTimeout: 4000,
         autoplayHoverPause: true,
         responsive: {
             0: {
                 items: 1
             },
             700: {
-                items:2
+                items: 2
             },
             1200: {
                 items: 3
@@ -21,3 +21,4 @@ $(document).ready(function () {
         }
     })
 })
+
