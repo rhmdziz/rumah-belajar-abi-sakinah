@@ -5,16 +5,16 @@
 
 {% block content %}
 
-<div id="gallery" class="flex justify-center items-center bg-slate-100">
+<div id="gallery" class="flex justify-center items-center bg-slate-100 py-24">
     <div class="container px-6 lg:px-24 min-h-screen">
         <div class="flex items-center justify-center">
             <div>
-                <caption class="pt-24">{{ galleryDetail.caption }}</caption>
                 <img src="{{ galleryDetail.image.url }}" alt="{{ galleryDetail.caption }}" class="rounded-xl">
+                <caption class="pt-24">{{ galleryDetail.caption }}</caption>
             </div>
         </div>
 
-        <div class="h-full w-full grid grid-cols-1 lg:grid-cols-3 gap-4 py-6">
+        <div class="h-full w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-6">
             {% for i in gallery %}
             <div class="h-60 w-full shadow rounded">
                 <a href="{% url 'theme:galleryDetail' i.id %}" class="h-full w-full group flex items-center justify-center overflow-hidden rounded">

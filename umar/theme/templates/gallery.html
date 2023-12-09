@@ -8,10 +8,10 @@
 <div id="gallery" class="flex justify-center items-center py-20 bg-slate-100">
     <div class="container px-6 lg:px-24 min-h-screen">
         <h2 class="text-center text-3xl py-4"><a href="{% url 'theme:gallery' %}">Galeri</a></h2>
-        <div class="h-full w-full grid grid-cols-1 lg:grid-cols-3 gap-4 py-6">
+        <div class="h-full w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-6">
 
             {% for i in gallery %}
-            <div class="h-60 w-full shadow rounded {% if forloop.counter > 5 %}hidden lg:block{% endif %}">
+            <div class="h-72 w-full shadow rounded {% if forloop.counter > 5 %}hidden lg:block{% endif %}">
                 <a href="{% url 'theme:galleryDetail' i.id %}" class="h-full w-full group flex items-center justify-center overflow-hidden rounded">
                     <img src="{{ i.image.url }}" class="group-hover:scale-110 h-full transition duration-500 object-cover">
                 </a>

@@ -5,3 +5,16 @@
 html {
     scroll-behavior: smooth;
 }
+.hamburger-active > span:nth-child(1) {
+    @apply rotate-45;
+}
+.hamburger-active > span:nth-child(3) {
+    @apply -rotate-45;
+}
+.hamburger-active > span:nth-child(2) {
+    @apply scale-0;
+}
+.navbar-show {
+    @apply right-4;
+    transition: 0.2s;
+}

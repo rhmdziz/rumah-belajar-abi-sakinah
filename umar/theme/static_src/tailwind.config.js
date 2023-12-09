@@ -44,7 +44,8 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ["'Plus Jakarta Sans'", ...defaultTheme.fontFamily.sans]
+                sans: ['Rubik', ...defaultTheme.fontFamily.sans],
+                display: ['Allison', 'cursive'],
             },
             colors: {
                 primary: '#38b6ff',
